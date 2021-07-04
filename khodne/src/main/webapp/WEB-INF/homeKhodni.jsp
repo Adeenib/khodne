@@ -74,29 +74,11 @@
 							href="Contact.html" style="padding: 10px 48px;">Call now!</a></li>
 						<li class="u-nav-item"><a
 							class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-							href="my/page" target="_blank" style="padding: 10px 48px;">Join
+							href="/registration"  style="padding: 10px 48px;">Join
 								us!</a></li>
 					</ul>
 				</div>
-				<div class="u-custom-menu u-nav-container-collapse">
-					<div
-						class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
-						<div class="u-sidenav-overflow">
-							<div class="u-menu-close"></div>
-							<ul
-								class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
-								<li class="u-nav-item"><a class="u-button-style u-nav-link"
-									href="Home.html" style="padding: 10px 48px;">Home</a></li>
-								<li class="u-nav-item"><a class="u-button-style u-nav-link"
-									href="/driver/" style="padding: 10px 48px;">Call Now! </a></li>
-								<li class="u-nav-item"><a class="u-button-style u-nav-link"
-									href="my/page" target="_blank" style="padding: 10px 48px;">join
-										us! </a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
-				</div>
+				
 			</nav>
 		</div>
 	</header>

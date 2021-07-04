@@ -29,7 +29,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	        http.
 	            authorizeRequests()
 	                .antMatchers("/static/", "/registration").permitAll()
-	                .antMatchers("/css/**","/js/**","/images/**").permitAll()
+	                .antMatchers("/css/**","/js/**","/images/**","/**").permitAll()
 	                .antMatchers("/admin/").access("hasRole('ADMIN')")    // NEW
 	                .antMatchers("/donations/**").access("hasRole('ORGANIZATION')") //NEW
 	                .anyRequest().authenticated()
@@ -37,6 +37,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	            .formLogin()
 	                .loginPage("/login")
 	                .permitAll()
+	                .successForwardUrl("/home")
 	                .and()
 	            .logout()
 	                .permitAll();
