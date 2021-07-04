@@ -72,4 +72,12 @@ public class Users {
         model.addAttribute("currentUser", userService.findByUsername(username));
         return "adminPage.jsp";
     }
+	@RequestMapping("/rider")
+	public String riderPage() {
+		return "rider.jsp";
+	}
+	@RequestMapping("/home/page")
+	public String homePage() {
+		return "homeKhodni.jsp";
+	}
 }
