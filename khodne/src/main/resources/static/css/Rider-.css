@@ -1,14 +1,3 @@
-#map {
-  height: 400px;
-  /* The height is 400 pixels */
-  width: 20%;
-  /* The width is the width of the web page */
-}
-#profile {
-    display:block;
-    width:10%;
-    color : grey;
-}
 .label {
    cursor: pointer;
    display:block;
