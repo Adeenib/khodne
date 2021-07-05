@@ -14,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -50,8 +51,8 @@ public class Users {
 		if (result.hasErrors()) {
 			return "register.jsp";
 		}
-//		userService.saveWithRiderRole(user);
-		 userService.saveUserWithAdminRole(user);
+		userService.saveWithRiderRole(user);
+//		 userService.saveUserWithAdminRole(user);
 		return "redirect:/registration";
 	}
 
@@ -86,7 +87,7 @@ public class Users {
 		if(userROLE==2)
 			return "redirect:/admin";
 		if(userROLE==1)
-			return "redirect:/rider";
+			return "redirect:/rider/"+userROLE;
 		if(userROLE==3)
 			return "redirect:/driver";
 		
@@ -114,8 +115,9 @@ public class Users {
 		return "adminDashboard.jsp";
 	}
 
-	@RequestMapping("/rider")
-	public String riderPage() {
+	@RequestMapping("/rider/{id}")
+	public String riderPage(@PathVariable("id")Long id,@ModelAttribute("User")User user,Model model) {
+		model.addAttribute("User", userService.findUserById(id));
 		return "rider.jsp";
 	}
 
