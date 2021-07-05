@@ -2,6 +2,7 @@ package com.example.demo.controllers;
 
 import java.security.Principal;
 import java.util.List;
+import java.util.Random;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -20,8 +21,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.Validator.UserValidator;
-import com.example.demo.models.Role;
-import com.example.demo.models.User;
+import com.example.demo.models.*;
 import com.example.demo.services.UserService;
 
 @Controller
@@ -104,13 +104,12 @@ public class Users {
 	}
 
 	@RequestMapping("/admin")
-
-	public String adminPage(Principal principal, Model model) {
+	public String adminPage(Principal principal, Model model,@ModelAttribute("user") User user) {
 		if (principal == null) 
 			return "redirect:/"; 
 		String username = principal.getName();
 		model.addAttribute("currentUser", userService.findByUsername(username));
-		List<User> allDriver =userService.findRoleByName("ROLE_ADMIN").getUsers();
+		List<User> allDriver =userService.findRoleByName("ROLE_DRIVER").getUsers();
 		model.addAttribute("allDriver", allDriver);
 		return "adminDashboard.jsp";
 	}
@@ -125,7 +124,30 @@ public class Users {
 	public String homePage() {
 		return "homeKhodni.jsp";
 	}
+	@PostMapping("/driver/new")
+	public String newDriver(@Valid @ModelAttribute("user") User user ,BindingResult result) {
+		if (result.hasErrors()) {
+			return "adminDashboard.jsp";
+		}
+		Random r = new Random();
+		
 
+		String pass="";
+		for(int i = 0; i < 9; i++){
+			pass+= r.nextInt(10) ;
+		}
+		user.setPassword(pass);
+		userService.saveWithDriverRole(user);
+		if(userService.findByUsername(user.getUsername()) !=null)
+			SendMail.sendEmail(user.getEmail(), user.getUsername(), pass);
+		return "redirect:/";
+		
+	}
+	@RequestMapping("/driver")
+	public String driverPage() {
+		return "driver.jsp";
+	}
+	
 	
 
 }

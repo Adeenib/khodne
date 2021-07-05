@@ -92,6 +92,6 @@ public class UserService {
 
 	}
     public Role findRoleByName(String name) {
-    		return roleRepository.findByName(name);
+    		return roleRepository.findByName(name).get(0);
 	}
     }

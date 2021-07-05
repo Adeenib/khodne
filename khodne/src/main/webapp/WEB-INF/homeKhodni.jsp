@@ -38,7 +38,7 @@
 	<header class="u-clearfix u-custom-color-1 u-header u-header"
 		id="sec-457f">
 		<div class="u-clearfix u-sheet u-sheet-1">
-			<a href="https://nicepage.com"
+			<a href="/"
 				class="u-align-left u-image u-logo u-image-1" data-image-width="150"
 				data-image-height="71"> <img
 				src="/images/small-6948-60df4ba05ca26.png"
