@@ -91,7 +91,7 @@ $(document).ready(function(){
         <button class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-3-base u-btn-1" id ="request_button">Request a <span style="font-weight: 700;"></span>Trip&nbsp;
         </button>
         <div alt="" class="u-border-20 u-border-white u-image u-image-circle u-image-1" data-image-width="1000" data-image-height="1500"></div>
-        <h5 class="u-text u-text-1">Username</h5>
+        <h5 class="u-text u-text-1"><c:out value="${User.username}"/></h5>
         <button class="u-text u-text-2">Edit Profile</button>
         <div class="u-form u-form-1">
           <form action="#" method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form-1" style="padding: 10px;">
