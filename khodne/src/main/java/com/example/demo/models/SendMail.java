@@ -17,7 +17,7 @@ public class SendMail {
     public static void sendEmail(String maildTo ,String userName,String pass) {
 
         final String username = "adeenbase@gmail.com";
-        final String password = "********";
+        final String password = "*********";
 
         Properties props = new Properties();
         props.put("mail.smtp.starttls.enable", "true");
