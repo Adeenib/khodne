@@ -72,4 +72,5 @@ public class Users {
         model.addAttribute("currentUser", userService.findByUsername(username));
         return "adminPage.jsp";
     }
+	
 }
