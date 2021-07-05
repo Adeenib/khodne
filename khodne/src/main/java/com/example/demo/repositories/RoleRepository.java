@@ -11,5 +11,5 @@ import com.example.demo.models.Role;
 public interface RoleRepository extends CrudRepository<Role,Long> {
 	 List<Role> findAll();
 	    
-	 List<Role> findByName(String name);
+	 Role findByName(String name);
 }

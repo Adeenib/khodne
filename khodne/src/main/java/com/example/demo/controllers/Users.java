@@ -1,6 +1,7 @@
 package com.example.demo.controllers;
 
 import java.security.Principal;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -18,13 +19,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.Validator.UserValidator;
+import com.example.demo.models.Role;
 import com.example.demo.models.User;
 import com.example.demo.services.UserService;
 
 @Controller
 public class Users {
 	private UserService userService;
-
+	
 	private UserValidator userValidator;
 
 	public Users(UserService userService, UserValidator userValidator) {
@@ -38,7 +40,7 @@ public class Users {
 		if (authentication == null || authentication instanceof AnonymousAuthenticationToken) {
 			return "register.jsp";
 		}
-		return "redirect:/rider";
+		return "redirect:/home";
 	}
 
 	@PostMapping("/registration")
@@ -107,6 +109,8 @@ public class Users {
 			return "redirect:/"; 
 		String username = principal.getName();
 		model.addAttribute("currentUser", userService.findByUsername(username));
+		List<User> allDriver =userService.findRoleByName("ROLE_ADMIN").getUsers();
+		model.addAttribute("allDriver", allDriver);
 		return "adminDashboard.jsp";
 	}
 
@@ -119,6 +123,8 @@ public class Users {
 	public String homePage() {
 		return "homeKhodni.jsp";
 	}
+
+	
 
 }
 

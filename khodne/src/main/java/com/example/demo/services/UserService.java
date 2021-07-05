@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.models.Role;
 import com.example.demo.models.Trip;
 import com.example.demo.models.User;
 import com.example.demo.repositories.RoleRepository;
@@ -90,5 +91,7 @@ public class UserService {
 		}
 
 	}
-    /////////////////////////
+    public Role findRoleByName(String name) {
+    		return roleRepository.findByName(name);
+	}
     }
