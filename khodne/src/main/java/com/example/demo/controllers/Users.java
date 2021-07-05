@@ -101,6 +101,7 @@ public class Users {
 	}
 
 	@RequestMapping("/admin")
+
 	public String adminPage(Principal principal, Model model) {
 		if (principal == null) 
 			return "redirect:/"; 
@@ -118,4 +119,6 @@ public class Users {
 	public String homePage() {
 		return "homeKhodni.jsp";
 	}
+
 }
+
