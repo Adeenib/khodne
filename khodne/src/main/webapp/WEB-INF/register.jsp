@@ -11,7 +11,7 @@
 	crossorigin="anonymous"></script>
 
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Khodne</title>
 <link rel="stylesheet" type="text/css" href="css/register.css">
 
 

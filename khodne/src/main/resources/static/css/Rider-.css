@@ -8,6 +8,9 @@
 .u-section-1 {
   background-image: url("/images/bg-3.png");
   background-position: 50% 50%;
+  display: flex;
+  justify-content:center;
+  align-items:center;
 }
 
 .u-section-1 .u-sheet-1 {
@@ -44,6 +47,7 @@
 }
 
 .u-section-1 .u-form-1 {
+  	display:none;
   height: 352px;
   margin: 0 570px 0 0;
 }
@@ -60,9 +64,10 @@
 }
 
 .u-section-1 .u-form-2 {
+	display:none;
   height: 313px;
-  margin-top: -550px;
-  margin-bottom: 0;
+  margin-top: 50px;
+  margin-bottom: 250px;
   margin-left: 630px;
   width: 570px;
 }
