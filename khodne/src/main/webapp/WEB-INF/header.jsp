@@ -17,8 +17,7 @@
 			<nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
 				<div class="menu-collapse"
 					style="font-size: 1rem; letter-spacing: 0px;">
-					<a
-						class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+					<a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
 						href="#"> <svg>
 							<use xmlns:xlink="http://www.w3.org/1999/xlink"
 								xlink:href="#menu-hamburger"></use></svg> <svg version="1.1"
