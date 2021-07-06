@@ -22,8 +22,8 @@ public class Trip{
 	@Column(name="number_of_passengers")
 	private String numberOfPassengers;
 	private String destination;
-	private int rider;
-	private int driver;
+	private Long rider;
+	private Long driver;
 	@Column(updatable=false)
 	 private Date createdAt;
 	 private Date updatedAt;
@@ -34,7 +34,7 @@ public class Trip{
 	public Trip() {}
 	
 
-	public Trip(String pickUpLocation, String numberOfPassengers, String destination, int rider, int driver,
+	public Trip(String pickUpLocation, String numberOfPassengers, String destination, Long rider, Long driver,
 			User user) {
 		super();
 		this.pickUpLocation = pickUpLocation;
@@ -76,16 +76,16 @@ public class Trip{
 	public void setDestination(String destination) {
 		this.destination = destination;
 	}
-	public int getRider() {
+	public Long getRider() {
 		return rider;
 	}
-	public void setRider(int rider) {
+	public void setRider(Long rider) {
 		this.rider = rider;
 	}
-	public int getDriver() {
+	public Long getDriver() {
 		return driver;
 	}
-	public void setDriver(int driver) {
+	public void setDriver(Long driver) {
 		this.driver = driver;
 	}
 	public Date getCreatedAt() {

@@ -18,7 +18,7 @@ public interface UserRepository extends CrudRepository<User, Long> {
     //Query by role object id
     List<User> findByRoles_Id(Long id);
     //
-//    List<User> findByLocation(String location);
+    List<User> findByLocation(String location);
     //
-//    List<User> findByLocationIsNot(String location);
+    List<User> findByLocationIsNot(String location);
 }

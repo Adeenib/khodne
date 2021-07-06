@@ -97,7 +97,11 @@ public class UserService {
     public List<User> getUserWithRole(Long id){
     	return userRepository.findByRoles_Id(id);
     }
-//    public List<User> getUsersNearLoc(String loc){
-//    	return userRepository.findByLocation(loc);
-//    }
+    public List<User> getUsersNearLoc(String loc){
+    	return userRepository.findByLocation(loc);
+    }
+    public void addUser(User user) {
+    	
+		
+	}
     }

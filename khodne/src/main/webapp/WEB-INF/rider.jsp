@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ page isErrorPage="true" %>
+<%@ page isErrorPage="true"%>
 
 <!DOCTYPE html>
 <html style="font-size: 16px;">
@@ -13,9 +13,12 @@
 <meta name="keywords" content="Driver's information">
 <meta name="description" content="">
 <meta name="page_type" content="np-template-header-footer-from-plugin">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 <title>Rider</title>
 <link rel="stylesheet" type="text/css" href="/css/nicepage.css"
 	media="screen">
@@ -31,18 +34,17 @@
 
 
 <script>
-
-$(document).ready(function(){
-        $("#request_button").click(function(){
-        $(".u-form-2").toggle();
-        });
-        });
-$(document).ready(function(){
-    $(".u-text-2").click(function(){
-    $(".u-form-1").toggle();
-    });
-    });
-    </script>
+	$(document).ready(function() {
+		$("#request_button").click(function() {
+			$(".u-form-2").toggle();
+		});
+	});
+	$(document).ready(function() {
+		$(".u-text-2").click(function() {
+			$(".u-form-1").toggle();
+		});
+	});
+</script>
 <script type="application/ld+json">{
 		"@context": "http://schema.org",
 		"@type": "Organization",
@@ -54,102 +56,191 @@ $(document).ready(function(){
 <meta property="og:type" content="website">
 </head>
 <body class="u-body">
-	<header class="u-clearfix u-header u-palette-3-light-1 u-header" id="sec-274b"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-        <a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="150" data-image-height="71">
-          <img src="/images/small-6948-60df4ba05ca26.png" class="u-logo-image u-logo-image-1" data-image-width="64">
-        </a>
-        <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
-          <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px; font-weight: 500;">
-            <a class="u-button-style u-custom-active-color u-custom-border u-custom-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
-              <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><symbol id="menu-hamburger" viewBox="0 0 16 16" style="width: 16px; height: 16px;"><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+	<header class="u-clearfix u-header u-palette-3-light-1 u-header"
+		id="sec-274b">
+		<div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+			<a href="https://nicepage.com" class="u-image u-logo u-image-1"
+				data-image-width="150" data-image-height="71"> <img
+				src="/images/small-6948-60df4ba05ca26.png"
+				class="u-logo-image u-logo-image-1" data-image-width="64">
+			</a>
+			<nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
+				<div class="menu-collapse"
+					style="font-size: 1rem; letter-spacing: 0px; font-weight: 500;">
+					<a
+						class="u-button-style u-custom-active-color u-custom-border u-custom-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+						href="#"> <svg>
+							<use xmlns:xlink="http://www.w3.org/1999/xlink"
+								xlink:href="#menu-hamburger"></use></svg> <svg version="1.1"
+							xmlns="http://www.w3.org/2000/svg"
+							xmlns:xlink="http://www.w3.org/1999/xlink">
+							<defs>
+							<symbol id="menu-hamburger" viewBox="0 0 16 16"
+								style="width: 16px; height: 16px;">
+							<rect y="1" width="16" height="2"></rect>
+							<rect y="7" width="16" height="2"></rect>
+							<rect y="13" width="16" height="2"></rect>
 </symbol>
 </defs></svg>
-            </a>
-          </div>
-          <div class="u-custom-menu u-nav-container">
-            <ul class="u-nav u-spacing-2 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-active-grey-5 u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="Rider-.html" style="padding: 10px 20px;">Rider </a>
-</li><li class="u-nav-item"><a class="u-active-grey-5 u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="About.html" style="padding: 10px 20px;">About</a>
-</li><li class="u-nav-item"><a class="u-active-grey-5 u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="Contact.html" style="padding: 10px 20px;">Contact</a>
-</li><li class="u-nav-item"><a class="u-active-grey-5 u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="/"style="padding: 10px 20px;">Home</a>
-</li></ul>
-          </div>
-          <div class="u-custom-menu u-nav-container-collapse">
-            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
-              <div class="u-sidenav-overflow">
-                <div class="u-menu-close"></div>
-                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Rider-.html" style="padding: 10px 20px;">Rider </a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="About.html" style="padding: 10px 20px;">About</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Contact.html" style="padding: 10px 20px;">Contact</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" style="padding: 10px 20px;">Home</a>
-</li></ul>
-              </div>
-            </div>
-            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
-          </div>
-        </nav>
-      </div></header>
-    <section class="u-align-center u-clearfix u-image u-section-1" id="carousel_6c34" data-image-width="978" data-image-height="648">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <button class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-3-base u-btn-1" id ="request_button">Request a <span style="font-weight: 700;"></span>Trip&nbsp;
-        </button>
-        <div alt="" class="u-border-20 u-border-white u-image u-image-circle u-image-1" data-image-width="1000" data-image-height="1500"></div>
-        <h5 class="u-text u-text-1"><c:out value="${User.username}"/></h5>
-        <button class="u-text u-text-2">Edit Profile</button>
-        <div class="u-form u-form-1">
-        <form:errors path="User"/>
-          <form:form action="/rider/${User.id}" modelAttribute="User" method="post" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form-1" style="padding: 10px;">
-            <div class="u-form-address u-form-group u-form-group-1">
-            
-            		<input type="hidden" name="_method" value="put">
-            				<form:hidden value="${ User.id }" path="id" />
-            		
-            	<form:errors path="username"/>
-              <form:label path="username" for="address-c3e7" class="u-label u-label-1">Name</form:label>
-              <form:input path="username" type="text" placeholder="Enter your name" id="address-c3e7" name="address" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-1" required=""/>
-            </div>
-            <div class="u-form-email u-form-group">
-            <form:errors path="email"/>
-              <form:label path="email" for="email-8c36" class="u-label u-label-2">Email</form:label>
-              <form:input path="email" type="email" placeholder="Enter a valid email address" id="email-8c36" name="email" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-2" required=""/>
-            </div>
-            <div class="u-form-group u-form-phone u-form-group-3">
-              <form:label path="password"  for="phone-347e" class="u-label u-label-3">Password</form:label>
-              <form:input path="password" type="password" placeholder="Enter your password" id="phone-347e" name="phone" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-3" required=""/>
-            </div>
-            <div class="u-align-left u-form-group u-form-submit">
-              <input type="submit" value="Update Profile" class="u-btn u-btn-submit u-button-style"/>
-            </div>
-          </form:form>
-        </div>
-        
-        <div class="u-form u-form-2" >
-          <form:form action="/trip/request/${User.id}" modelAttribute="Trip" method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;">
-            <div class="u-form-group u-form-name">
-            <form:hidden path="user" value="${User}"/>
-              <form:label  path="destination" for="name-ad01" class="u-label u-label-5">Location</form:label>
-              <form:input  path="destination" type="text" placeholder="Enter Your Current Location" id="name-ad01" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-5" required=""/>
-            </div>
-            <div class="u-form-email u-form-group">
-              <form:label path="numberOfPassengers" for="email-ad01" class="u-label u-label-6">Number of Passengers </form:label>
-              <form:input path="numberOfPassengers" type="number" placeholder="Enter Passengers Number" id="email-ad01" name="email" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-6" required=""/>
-            </div>
-            <div class="u-form-group u-form-group-8">
-              <form:label path="destination" for="text-d63a" class="u-label u-label-7">Destination</form:label>
-              <form:input path="destination" type="text" id="text-d63a" name="text" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-7" placeholder="Enter Your Destination" required=""/>
-            </div>
-            <div class="u-form-group u-form-group-8">
-              <form:label path="driver" for="text-d63a" class="u-label u-label-7">Drivers</form:label>
-              <form:select path="driver"  id="text-d63a" name="text" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-7" placeholder="Choose" required="">
-              </form:select>
-            </div>
-            <div class="u-align-right u-form-group u-form-submit">
-              <input type="submit" value="KHODNI" class="u-btn u-btn-submit u-button-style u-btn-3"/>
-            </div>
-            
-          </form:form>
-        </div>
-        <h2 class="u-text u-text-3">Driver's information</h2>
+					</a>
+				</div>
+				<div class="u-custom-menu u-nav-container">
+					<ul class="u-nav u-spacing-2 u-unstyled u-nav-1">
+						<li class="u-nav-item"><a
+							class="u-active-grey-5 u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90"
+							href="Rider-.html" style="padding: 10px 20px;">Rider </a></li>
+						<li class="u-nav-item"><a
+							class="u-active-grey-5 u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90"
+							href="About.html" style="padding: 10px 20px;">About</a></li>
+						<li class="u-nav-item"><a
+							class="u-active-grey-5 u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90"
+							href="Contact.html" style="padding: 10px 20px;">Contact</a></li>
+						<li class="u-nav-item"><a
+							class="u-active-grey-5 u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90"
+							href="/" style="padding: 10px 20px;">Home</a></li>
+					</ul>
+				</div>
+				<div class="u-custom-menu u-nav-container-collapse">
+					<div
+						class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+						<div class="u-sidenav-overflow">
+							<div class="u-menu-close"></div>
+							<ul
+								class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
+								<li class="u-nav-item"><a class="u-button-style u-nav-link"
+									href="Rider-.html" style="padding: 10px 20px;">Rider </a></li>
+								<li class="u-nav-item"><a class="u-button-style u-nav-link"
+									href="About.html" style="padding: 10px 20px;">About</a></li>
+								<li class="u-nav-item"><a class="u-button-style u-nav-link"
+									href="Contact.html" style="padding: 10px 20px;">Contact</a></li>
+								<li class="u-nav-item"><a class="u-button-style u-nav-link"
+									style="padding: 10px 20px;">Home</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+				</div>
+			</nav>
+		</div>
+	</header>
+	<section class="u-align-center u-clearfix u-image u-section-1"
+		id="carousel_6c34" data-image-width="978" data-image-height="648">
+		<div class="u-clearfix u-sheet u-sheet-1">
+			<button
+				class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-3-base u-btn-1"
+				id="request_button">
+				Request a <span style="font-weight: 700;"></span>Trip&nbsp;
+			</button>
+			<div alt=""
+				class="u-border-20 u-border-white u-image u-image-circle u-image-1"
+				data-image-width="1000" data-image-height="1500"></div>
+			<h5 class="u-text u-text-1">
+				<c:out value="${User.username}" />
+			</h5>
+			<button class="u-text u-text-2">Edit Profile</button>
+			<div class="u-form u-form-1">
+				<form:errors path="User" />
+				<form:form action="/rider/${User.id}" modelAttribute="User"
+					method="post"
+					class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form"
+					source="custom" name="form-1" style="padding: 10px;">
+					<div class="u-form-address u-form-group u-form-group-1">
+
+						<input type="hidden" name="_method" value="put">
+						<form:hidden value="${ User.id }" path="id" />
+
+						<form:errors path="username" />
+						<form:label path="username" for="address-c3e7"
+							class="u-label u-label-1">Name</form:label>
+						<form:input path="username" type="text"
+							placeholder="Enter your name" id="address-c3e7" name="address"
+							class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-1"
+							required="" />
+					</div>
+					<div class="u-form-email u-form-group">
+						<form:errors path="email" />
+						<form:label path="email" for="email-8c36"
+							class="u-label u-label-2">Email</form:label>
+						<form:input path="email" type="email"
+							placeholder="Enter a valid email address" id="email-8c36"
+							name="email"
+							class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-2"
+							required="" />
+					</div>
+					<div class="u-form-group u-form-phone u-form-group-3">
+						<form:label path="password" for="phone-347e"
+							class="u-label u-label-3">Password</form:label>
+						<form:input path="password" type="password"
+							placeholder="Enter your password" id="phone-347e" name="phone"
+							class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-3"
+							required="" />
+					</div>
+					<div class="u-form-group u-form-phone u-form-group-3">
+						<form:label path="location" for="phone-347e"
+							class="u-label u-label-3">Location</form:label>
+						<form:input path="location" type="text"
+							placeholder="Enter your location" id="phone-347e" name="phone"
+							class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-3"
+							required="" />
+					</div>
+					<div class="u-align-left u-form-group u-form-submit">
+						<input type="submit" value="Update Profile"
+							class="u-btn u-btn-submit u-button-style" />
+					</div>
+				</form:form>
+			</div>
+			<div class="u-form u-form-2">
+				<form:form action="/trip/request/${User.id}" modelAttribute="Trip"
+					method="POST"
+					class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form"
+					source="custom" name="form" style="padding: 10px;">
+					<div class="u-form-group u-form-name">
+						<form:hidden path="rider" value="${User.id}" />
+						<form:errors path="Trip.*" />
+						<form:label path="pickUpLocation" for="name-ad01"
+							class="u-label u-label-5">Pick Up Location</form:label>
+						<form:input path="pickUpLocation" type="text"
+							placeholder="Enter Your Current Location" id="name-ad01"
+							name="name"
+							class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-5"
+							required="" />
+					</div>
+					<div class="u-form-email u-form-group">
+						<form:label path="numberOfPassengers" for="email-ad01"
+							class="u-label u-label-6">Number of Passengers </form:label>
+						<form:input path="numberOfPassengers" type="text"
+							placeholder="Enter Passengers Number" id="email-ad01"
+							name="email"
+							class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-6"
+							required="" />
+					</div>
+					<div class="u-form-group u-form-group-8">
+						<form:label path="destination" for="text-d63a"
+							class="u-label u-label-7">Destination</form:label>
+						<form:input path="destination" type="text" id="text-d63a"
+							name="text"
+							class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-7"
+							placeholder="Enter Your Destination" required="" />
+					</div>
+					<div class="u-form-group u-form-group-8">
+						<form:label path="driver" for="text-d63a"
+							class="u-label u-label-7">Drivers Working Near You</form:label>
+						<form:select path="driver" id="text-d63a" name="text"
+							class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-7"
+							placeholder="Choose" required="">
+							<c:forEach items="${driversNear}" var="d">
+								<form:option value="${d.id}"  > "${d.username}  </form:option>
+							</c:forEach>
+						</form:select>
+					</div>
+					<div class="u-align-right u-form-group u-form-submit">
+						<input type="submit" value="KHODNI"
+							class="u-btn u-btn-submit u-button-style u-btn-3" />
+					</div>
+
+				</form:form>
+			</div>
+			<h2 class="u-text u-text-3">Driver's information</h2>
         <div class="u-expanded-width u-table u-table-responsive u-table-1">
           <table class="u-table-entity">
             <colgroup>
@@ -163,44 +254,49 @@ $(document).ready(function(){
               <tr style="height: 21px;">
                 <th class="u-border-1 u-border-black u-table-cell">Driver Name</th>
                 <th class="u-border-1 u-border-black u-table-cell">Car Model</th>
-                <th class="u-border-1 u-border-black u-table-cell">ETA</th>
-                <th class="u-border-1 u-border-black u-table-cell">Status</th>
-                <th class="u-border-1 u-border-black u-table-cell">Phone Number&nbsp;</th>
+                <th class="u-border-1 u-border-black u-table-cell">Email</th>
+                <th class="u-border-1 u-border-black u-table-cell">Capacity</th>
+                <th class="u-border-1 u-border-black u-table-cell">Location</th>
               </tr>
             </thead>
             <tbody class="u-table-body">
-            <c:forEach items="${User.trips }" var="tripInfo">
+            <c:forEach items="${allT}" var="t">
               <tr style="height: 75px;">
-                <td class="u-border-1 u-border-grey-30 u-table-cell"><c:out value="${ tripInfo.destination}"/></td>
-                <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
-                <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
-                <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
-                <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
-              </tr>
+              
+					
+                <td class="u-border-1 u-border-grey-30 u-table-cell"><c:out value="${ driverr.car_type}"/></td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell"><c:out value="${ driverr.phone}"/></td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell"><c:out value="${ driverr.email}"/></td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell"><c:out value="${ driverr.capacity}"/></td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell"><c:out value="${ driverr.location}"/></td>
+              </tr>	
               </c:forEach>
             </tbody>
           </table>
         </div>
       </div>
-    </section>
-    
-    
-    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-ed07"><div class="u-clearfix u-sheet u-sheet-1">
-        <p class="u-small-text u-text u-text-variant u-text-1">Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
-      </div></footer>
-    <section class="u-backlink u-clearfix u-grey-80">
-      <a class="u-link" href="https://nicepage.com/html-templates" target="_blank">
-        <span>HTML Templates</span>
-      </a>
-      <p class="u-text">
-        <span>created with</span>
-      </p>
-      <a class="u-link" href="https://nicepage.com/html-website-builder" target="_blank">
-        <span>HTML Layout generator</span>
-      </a>. 
-    </section>
+	</section>
+	<footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer"
+		id="sec-ed07">
+		<div class="u-clearfix u-sheet u-sheet-1">
+			<p class="u-small-text u-text u-text-variant u-text-1">Sample
+				text. Click to select the text box. Click again or double click to
+				start editing the text.</p>
+		</div>
+	</footer>
+	<section class="u-backlink u-clearfix u-grey-80">
+		<a class="u-link" href="https://nicepage.com/html-templates"
+			target="_blank"> <span>HTML Templates</span>
+		</a>
+		<p class="u-text">
+			<span>created with</span>
+		</p>
+		<a class="u-link" href="https://nicepage.com/html-website-builder"
+			target="_blank"> <span>HTML Layout generator</span>
+		</a>.
+	</section>
 	<script src="https://code.jquery.com/jquery-3.6.0.js"
-	integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-	crossorigin="anonymous"></script>
+		integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+		crossorigin="anonymous"></script>
 </body>
 </html>

@@ -1,6 +1,7 @@
 package com.example.demo.controllers;
 
 import java.security.Principal;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -46,6 +47,7 @@ public class Users {
 			return "register.jsp";
 		}
 		return "redirect:/home";
+//		return "register.jsp";
 	}
 
 	@PostMapping("/registration")
@@ -64,14 +66,15 @@ public class Users {
 	@RequestMapping("/login")
 	public String login(@RequestParam(value = "error", required = false) String error,
 			@RequestParam(value = "logout", required = false) String logout, Model model,
-			@ModelAttribute("user") User user) {
-
+			@ModelAttribute("user") User user,HttpSession session) {
+		
 		if (error != null) {
 			model.addAttribute("errorMessage", "Invalid Credentials, Please try again.");
 		}
 		if (logout != null) {
 			model.addAttribute("logoutMessage", "Logout Successful!");
 		}
+//		session.add user.getId()
 		return "register.jsp"; // loginPage
 	}
 
@@ -82,20 +85,23 @@ public class Users {
 	}
 
 	@RequestMapping(value = { "/home" })
-	public String home(@AuthenticationPrincipal Principal principal, Model model) {
+	public String home(@AuthenticationPrincipal Principal principal, Model model,HttpSession session) {
 
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		String currentPrincipleName = auth.getName();
+		String username = auth.getName();
+		Long curId = userService.findByUsername(username).getId();
+				
 		if (!(auth instanceof AnonymousAuthenticationToken)) {
 		Long userROLE = userService.findByUsername(currentPrincipleName).getRoles().get(0).getId();
 		if(userROLE==2)
-			return "redirect:/admin";
+			return "redirect:/admin"+curId;
 		if(userROLE==1)
-			return "redirect:/rider/"+userROLE;
+			return "redirect:/rider/"+curId;
 		if(userROLE==3)
-			return "redirect:/driver";
+			return "redirect:/driver"+curId;
 		
-			String username = auth.getName();
+//			String username = auth.getName();
 
 			System.out.println(userService.findByUsername(username).getRoles().get(0).getName());
 
@@ -121,22 +127,51 @@ public class Users {
 	@GetMapping("/rider/{id}")
 	public String riderPage(@PathVariable("id")Long id,@ModelAttribute("User")User user,@ModelAttribute("Trip")Trip trip,Model model) {
 		model.addAttribute("Trip", trip);
-//		List<User> driversNear = userService.getUsersNearLoc(null);
 		User u = userService.findUserById(id);
+		ArrayList<User> driversNear =new ArrayList<>();
+		List <User> allDrivers =  userService.findRoleByName("ROLE_DRIVER").getUsers();
+		System.out.println( "allDrivers" + allDrivers);
+//		.getLocation().equals(u.getLocation());
+		for (int i = 0 ; i< allDrivers.size() ; i++) {
+			if (allDrivers.get(i).getLocation().equals(u.getLocation()) ) {
+				driversNear.add(allDrivers.get(i));
+				System.out.println("hello");
+			} System.out.println("if test " + allDrivers.get(i).getLocation());
+			System.out.println("if test 22222"+u.getLocation());
+		}
+//		System.out.println(allDrivers.get(0).getLocation());
+//		List<Trip> tripsU = u.getTrips();
+		System.out.println("driversNear" + driversNear);
 		model.addAttribute("User", u);
-//		model.addAttribute("driversNear", driversNear);
+		List<Trip> trips23 = userService.getAllTrips();
+//		User driverU  ;
+		
+		for (int i=0; i<trips23.size();i++) {
+			if(trips23.get(i).getRider() == u.getId()) {
+				User driverU = userService.findUserById((Long)trips23.get(i).getDriver()); 
+				model.addAttribute("driverr", driverU);
+				System.out.println("i'm here"  +driverU);
+			}
+		}
+		
+		model.addAttribute("allT", trips23);
+		System.out.println(trips23);
+		model.addAttribute("driversNear", driversNear);
+		
 		return "rider.jsp";
 	}
+//	@RequestParam("phone")String phone
 	@PutMapping("/rider/{id}")
-	public String riderUpdate(@PathVariable("id")Long id,@Valid @ModelAttribute("User")User user,BindingResult result,Model model) {
-		if(result.hasErrors()) 
-			return "rider.jsp";
+	public String riderUpdate(@PathVariable("id")Long id,Model model,@ModelAttribute("User")User user) {
+//		User curr = userService.findUserById(id); 
+//		curr.setLocation(phone);
 		userService.updateUser(user);
 		return "redirect:/rider/"+user.getId();
 	}
 	@PostMapping("/trip/request/{id}")
-	public String riderRequest(@PathVariable("id")Long uId,@ModelAttribute("Trip")Trip trip,BindingResult result) {
+	public String riderRequest(@PathVariable("id")Long uId,@ModelAttribute("User")User user,@ModelAttribute("Trip")Trip trip,BindingResult result) {
 		if(result.hasErrors()) {
+			System.out.println("there's an error");
 			return "rider.jsp"; 
 		}
 //		Trip t= t.setDriver(); 
