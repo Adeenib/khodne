@@ -16,6 +16,7 @@ import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
 
 
@@ -33,6 +34,17 @@ public class User {
  private String password;
  @Transient
  private String passwordConfirmation;
+ @Min(2)
+ private Integer capacity;
+ @Size(min=5)
+ private String phone;
+ @Size(min=2)
+ private String car_type;
+ @Size(min=2)
+ private String location;
+
+ 
+ 
  
  @Column(updatable=false)
  private Date createdAt;
@@ -48,27 +60,68 @@ public class User {
  
  public User() {
  }
- 
- public User(String email, @Size(min = 3) String username, @Size(min = 5) String password, String passwordConfirmation,
-		List<Role> roles, List<Trip> trips) {
-	super();
-	this.email = email;
-	this.username = username;
-	this.password = password;
-	this.passwordConfirmation = passwordConfirmation;
-	this.roles = roles;
-	this.trips = trips;
-}
+
+
 
 public Long getId() {
-     return id;
- }
- 
- public String getEmail() {
+	return id;
+}
+public void setId(Long id) {
+	this.id = id;
+}
+public String getEmail() {
 	return email;
 }
 public void setEmail(String email) {
 	this.email = email;
+}
+public String getUsername() {
+	return username;
+}
+public void setUsername(String username) {
+	this.username = username;
+}
+public String getPassword() {
+	return password;
+}
+public void setPassword(String password) {
+	this.password = password;
+}
+public String getPasswordConfirmation() {
+	return passwordConfirmation;
+}
+public void setPasswordConfirmation(String passwordConfirmation) {
+	this.passwordConfirmation = passwordConfirmation;
+}
+public Integer getCapacity() {
+	return capacity;
+}
+public void setCapacity(Integer capacity) {
+	this.capacity = capacity;
+}
+public String getPhone() {
+	return phone;
+}
+public void setPhone(String phone) {
+	this.phone = phone;
+}
+public String getCar_type() {
+	return car_type;
+}
+public void setCar_type(String car_type) {
+	this.car_type = car_type;
+}
+public String getLocation() {
+	return location;
+}
+public void setLocation(String location) {
+	this.location = location;
+}
+public List<Role> getRoles() {
+	return roles;
+}
+public void setRoles(List<Role> roles) {
+	this.roles = roles;
 }
 public List<Trip> getTrips() {
 	return trips;
@@ -76,47 +129,12 @@ public List<Trip> getTrips() {
 public void setTrips(List<Trip> trips) {
 	this.trips = trips;
 }
-public String getUsername() {
-     return username;
- }
- public void setUsername(String username) {
-     this.username = username;
- }
- public String getPassword() {
-     return password;
- }
- public void setPassword(String password) {
-     this.password = password;
- }
- public String getPasswordConfirmation() {
-     return passwordConfirmation;
- }
- public void setPasswordConfirmation(String passwordConfirmation) {
-     this.passwordConfirmation = passwordConfirmation;
- }
- public Date getCreatedAt() {
-     return createdAt;
- }
- public void setCreatedAt(Date createdAt) {
-     this.createdAt = createdAt;
- }
- public Date getUpdatedAt() {
-     return updatedAt;
- }
- public void setUpdatedAt(Date updatedAt) {
-     this.updatedAt = updatedAt;
- }
- public List<Role> getRoles() {
-     return roles;
- }
- public void setRoles(List<Role> roles) {
-     this.roles = roles;
- }
- 
- public void setId(Long id) {
-	this.id = id;
+public Date getCreatedAt() {
+	return createdAt;
 }
-
+public Date getUpdatedAt() {
+	return updatedAt;
+}
 @PrePersist
  protected void onCreate(){
      this.createdAt = new Date();
