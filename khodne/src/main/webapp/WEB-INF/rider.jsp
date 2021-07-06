@@ -262,10 +262,8 @@
             <tbody class="u-table-body">
             <c:forEach items="${allT}" var="t">
               <tr style="height: 75px;">
-              
-					
+                <td class="u-border-1 u-border-grey-30 u-table-cell"><c:out value="${ driverr.username}"/></td>
                 <td class="u-border-1 u-border-grey-30 u-table-cell"><c:out value="${ driverr.car_type}"/></td>
-                <td class="u-border-1 u-border-grey-30 u-table-cell"><c:out value="${ driverr.phone}"/></td>
                 <td class="u-border-1 u-border-grey-30 u-table-cell"><c:out value="${ driverr.email}"/></td>
                 <td class="u-border-1 u-border-grey-30 u-table-cell"><c:out value="${ driverr.capacity}"/></td>
                 <td class="u-border-1 u-border-grey-30 u-table-cell"><c:out value="${ driverr.location}"/></td>
