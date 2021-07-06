@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ page isErrorPage="true" %>
+
 <!DOCTYPE html>
 <html style="font-size: 16px;">
 <head>
@@ -44,7 +47,7 @@ $(document).ready(function(){
 		"@context": "http://schema.org",
 		"@type": "Organization",
 		"name": "",
-		"logo": "images/small-6948-60df4ba05ca26.png"
+		"logo": "/images/small-6948-60df4ba05ca26.png"
 </script>
 <meta name="theme-color" content="#478ac9">
 <meta property="og:title" content="Rider">
@@ -53,7 +56,7 @@ $(document).ready(function(){
 <body class="u-body">
 	<header class="u-clearfix u-header u-palette-3-light-1 u-header" id="sec-274b"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="150" data-image-height="71">
-          <img src="images/small-6948-60df4ba05ca26.png" class="u-logo-image u-logo-image-1" data-image-width="64">
+          <img src="/images/small-6948-60df4ba05ca26.png" class="u-logo-image u-logo-image-1" data-image-width="64">
         </a>
         <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
           <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px; font-weight: 500;">
@@ -68,7 +71,7 @@ $(document).ready(function(){
             <ul class="u-nav u-spacing-2 u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-active-grey-5 u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="Rider-.html" style="padding: 10px 20px;">Rider </a>
 </li><li class="u-nav-item"><a class="u-active-grey-5 u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="About.html" style="padding: 10px 20px;">About</a>
 </li><li class="u-nav-item"><a class="u-active-grey-5 u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="Contact.html" style="padding: 10px 20px;">Contact</a>
-</li><li class="u-nav-item"><a class="u-active-grey-5 u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" style="padding: 10px 20px;">Home</a>
+</li><li class="u-nav-item"><a class="u-active-grey-5 u-button-style u-hover-grey-10 u-nav-link u-text-active-grey-90 u-text-grey-90 u-text-hover-grey-90" href="/"style="padding: 10px 20px;">Home</a>
 </li></ul>
           </div>
           <div class="u-custom-menu u-nav-container-collapse">
@@ -94,52 +97,57 @@ $(document).ready(function(){
         <h5 class="u-text u-text-1"><c:out value="${User.username}"/></h5>
         <button class="u-text u-text-2">Edit Profile</button>
         <div class="u-form u-form-1">
-          <form action="#" method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form-1" style="padding: 10px;">
+        <form:errors path="User"/>
+          <form:form action="/rider/${User.id}" modelAttribute="User" method="post" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form-1" style="padding: 10px;">
             <div class="u-form-address u-form-group u-form-group-1">
-              <label for="address-c3e7" class="u-label u-label-1">Name</label>
-              <input type="text" placeholder="Enter your name" id="address-c3e7" name="address" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-1" required="">
+            
+            		<input type="hidden" name="_method" value="put">
+            				<form:hidden value="${ User.id }" path="id" />
+            		
+            	<form:errors path="username"/>
+              <form:label path="username" for="address-c3e7" class="u-label u-label-1">Name</form:label>
+              <form:input path="username" type="text" placeholder="Enter your name" id="address-c3e7" name="address" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-1" required=""/>
             </div>
             <div class="u-form-email u-form-group">
-              <label for="email-8c36" class="u-label u-label-2">Email</label>
-              <input type="email" placeholder="Enter a valid email address" id="email-8c36" name="email" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-2" required="">
+            <form:errors path="email"/>
+              <form:label path="email" for="email-8c36" class="u-label u-label-2">Email</form:label>
+              <form:input path="email" type="email" placeholder="Enter a valid email address" id="email-8c36" name="email" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-2" required=""/>
             </div>
             <div class="u-form-group u-form-phone u-form-group-3">
-              <label for="phone-347e" class="u-label u-label-3">Phone Number</label>
-              <input type="tel" pattern="\+?\d{0,3}[\s\(\-]?([0-9]{2,3})[\s\)\-]?([\s\-]?)([0-9]{3})[\s\-]?([0-9]{2})[\s\-]?([0-9]{2})" placeholder="Enter your phone (e.g. +14155552675)" id="phone-347e" name="phone" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-3" required="">
-            </div>
-            <div class="u-form-address u-form-group u-hidden-sm u-form-group-4">
-              <label for="address-cae9" class="u-form-control-hidden u-label u-label-4"></label>
-              <input type="text" placeholder="Enter your address" id="address-cae9" name="address-1" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-4" required="">
+              <form:label path="password"  for="phone-347e" class="u-label u-label-3">Password</form:label>
+              <form:input path="password" type="password" placeholder="Enter your password" id="phone-347e" name="phone" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-3" required=""/>
             </div>
             <div class="u-align-left u-form-group u-form-submit">
-              <a href="#" class="u-btn u-btn-submit u-button-style">Submit</a>
-              <input type="submit" value="submit" class="u-form-control-hidden">
+              <input type="submit" value="Update Profile" class="u-btn u-btn-submit u-button-style"/>
             </div>
-            
-          </form>
+          </form:form>
         </div>
         
         <div class="u-form u-form-2" >
-          <form action="#" method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;">
+          <form:form action="/trip/request/${User.id}" modelAttribute="Trip" method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom" name="form" style="padding: 10px;">
             <div class="u-form-group u-form-name">
-              <label for="name-ad01" class="u-label u-label-5">Location</label>
-              <input type="text" placeholder="Enter Your Current Location" id="name-ad01" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-5" required="">
+            <form:hidden path="user" value="${User}"/>
+              <form:label  path="destination" for="name-ad01" class="u-label u-label-5">Location</form:label>
+              <form:input  path="destination" type="text" placeholder="Enter Your Current Location" id="name-ad01" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-5" required=""/>
             </div>
             <div class="u-form-email u-form-group">
-              <label for="email-ad01" class="u-label u-label-6">Number of Passengers </label>
-              <input type="email" placeholder="Enter Passengers Number" id="email-ad01" name="email" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-6" required="">
+              <form:label path="numberOfPassengers" for="email-ad01" class="u-label u-label-6">Number of Passengers </form:label>
+              <form:input path="numberOfPassengers" type="number" placeholder="Enter Passengers Number" id="email-ad01" name="email" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-6" required=""/>
             </div>
             <div class="u-form-group u-form-group-8">
-              <label for="text-d63a" class="u-label u-label-7">Destination</label>
-              <input type="text" id="text-d63a" name="text" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-7" placeholder="Enter Your Destination">
+              <form:label path="destination" for="text-d63a" class="u-label u-label-7">Destination</form:label>
+              <form:input path="destination" type="text" id="text-d63a" name="text" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-7" placeholder="Enter Your Destination" required=""/>
+            </div>
+            <div class="u-form-group u-form-group-8">
+              <form:label path="driver" for="text-d63a" class="u-label u-label-7">Drivers</form:label>
+              <form:select path="driver"  id="text-d63a" name="text" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-7" placeholder="Choose" required="">
+              </form:select>
             </div>
             <div class="u-align-right u-form-group u-form-submit">
-              <a href="#" class="u-btn u-btn-submit u-button-style u-btn-3">Submit</a>
-              <input type="submit" value="submit" class="u-form-control-hidden">
+              <input type="submit" value="KHODNI" class="u-btn u-btn-submit u-button-style u-btn-3"/>
             </div>
             
-            <input type="hidden" value="" name="recaptchaResponse">
-          </form>
+          </form:form>
         </div>
         <h2 class="u-text u-text-3">Driver's information</h2>
         <div class="u-expanded-width u-table u-table-responsive u-table-1">
@@ -161,13 +169,15 @@ $(document).ready(function(){
               </tr>
             </thead>
             <tbody class="u-table-body">
+            <c:forEach items="${User.trips }" var="tripInfo">
               <tr style="height: 75px;">
-                <td class="u-border-1 u-border-grey-30 u-table-cell">Row 1</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell"><c:out value="${ tripInfo.destination}"/></td>
                 <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
                 <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
                 <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
                 <td class="u-border-1 u-border-grey-30 u-table-cell">Description</td>
               </tr>
+              </c:forEach>
             </tbody>
           </table>
         </div>

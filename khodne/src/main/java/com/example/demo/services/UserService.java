@@ -64,8 +64,8 @@ public class UserService {
     	return userRepository.findAll();
     	
     }
-    public User updateUser(User u) {
-    	return userRepository.save(u);
+    public void updateUser(User u) {
+    	 userRepository.save(u);
     }
     public void destroyUser(Long id) {
     	userRepository.deleteById(id);
@@ -92,6 +92,12 @@ public class UserService {
 
 	}
     public Role findRoleByName(String name) {
-    		return roleRepository.findByName(name);
+    		return roleRepository.findByName(name).get(0);
 	}
+    public List<User> getUserWithRole(Long id){
+    	return userRepository.findByRoles_Id(id);
+    }
+//    public List<User> getUsersNearLoc(String loc){
+//    	return userRepository.findByLocation(loc);
+//    }
     }

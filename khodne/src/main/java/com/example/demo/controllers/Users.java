@@ -13,14 +13,16 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.Validator.UserValidator;
-import com.example.demo.models.Role;
+import com.example.demo.models.Trip;
 import com.example.demo.models.User;
 import com.example.demo.services.UserService;
 
@@ -115,12 +117,32 @@ public class Users {
 		return "adminDashboard.jsp";
 	}
 
-	@RequestMapping("/rider/{id}")
-	public String riderPage(@PathVariable("id")Long id,@ModelAttribute("User")User user,Model model) {
-		model.addAttribute("User", userService.findUserById(id));
+	@GetMapping("/rider/{id}")
+	public String riderPage(@PathVariable("id")Long id,@ModelAttribute("User")User user,@ModelAttribute("Trip")Trip trip,Model model) {
+		model.addAttribute("Trip", trip);
+//		List<User> driversNear = userService.getUsersNearLoc(null);
+		User u = userService.findUserById(id);
+		model.addAttribute("User", u);
+//		model.addAttribute("driversNear", driversNear);
 		return "rider.jsp";
 	}
-
+	@PutMapping("/rider/{id}")
+	public String riderUpdate(@PathVariable("id")Long id,@Valid @ModelAttribute("User")User user,BindingResult result,Model model) {
+		if(result.hasErrors()) 
+			return "rider.jsp";
+		userService.updateUser(user);
+		return "redirect:/rider/"+user.getId();
+	}
+	@PostMapping("/trip/request/{id}")
+	public String riderRequest(@PathVariable("id")Long uId,@ModelAttribute("Trip")Trip trip,BindingResult result) {
+		if(result.hasErrors()) {
+			return "rider.jsp"; 
+		}
+//		Trip t= t.setDriver(); 
+		User rider = userService.findUserById(uId);
+		userService.createTrip(trip);
+		return "redirect:/rider/"+rider.getId();
+	}
 	@RequestMapping("/")
 	public String homePage() {
 		return "homeKhodni.jsp";

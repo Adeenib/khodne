@@ -48,7 +48,19 @@ public class User {
  
  public User() {
  }
- public Long getId() {
+ 
+ public User(String email, @Size(min = 3) String username, @Size(min = 5) String password, String passwordConfirmation,
+		List<Role> roles, List<Trip> trips) {
+	super();
+	this.email = email;
+	this.username = username;
+	this.password = password;
+	this.passwordConfirmation = passwordConfirmation;
+	this.roles = roles;
+	this.trips = trips;
+}
+
+public Long getId() {
      return id;
  }
  
@@ -101,7 +113,11 @@ public String getUsername() {
      this.roles = roles;
  }
  
- @PrePersist
+ public void setId(Long id) {
+	this.id = id;
+}
+
+@PrePersist
  protected void onCreate(){
      this.createdAt = new Date();
  }
@@ -109,6 +125,7 @@ public String getUsername() {
  protected void onUpdate(){
      this.updatedAt = new Date();
  }
+ 
 }
 
 
