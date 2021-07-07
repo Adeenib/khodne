@@ -95,11 +95,11 @@ public class Users {
 		if (!(auth instanceof AnonymousAuthenticationToken)) {
 		Long userROLE = userService.findByUsername(currentPrincipleName).getRoles().get(0).getId();
 		if(userROLE==2)
-			return "redirect:/admin"+curId;
+			return "redirect:/admin/"+curId;
 		if(userROLE==1)
 			return "redirect:/rider/"+curId;
 		if(userROLE==3)
-			return "redirect:/driver"+curId;
+			return "redirect:/driver/"+curId;
 		
 //			String username = auth.getName();
 
@@ -113,8 +113,8 @@ public class Users {
 
 	}
 
-	@RequestMapping("/admin")
-	public String adminPage(Principal principal, Model model,@ModelAttribute("user") User user) {
+	@RequestMapping("/admin/{id}")
+	public String adminPage(@PathVariable("id")Long id,Principal principal, Model model,@ModelAttribute("user") User user) {
 		if (principal == null) 
 			return "redirect:/"; 
 		String username = principal.getName();
@@ -199,7 +199,7 @@ public class Users {
 		userService.saveWithDriverRole(user);
 		if(userService.findByUsername(user.getUsername()) !=null)
 			SendMail.sendEmail(user.getEmail(), user.getUsername(), pass);
-		return "redirect:/";
+		return "redirect:/driver/"+user.getId();
 		
 	}
 	@RequestMapping("/driver/{id}")

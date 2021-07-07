@@ -67,7 +67,6 @@
 					</a>
 				</div>
 				<div class="u-custom-menu u-nav-container">
-				<h2>Welcome <c:out value="${currentUser.id}"/></h2>
 					<ul class="u-nav u-unstyled u-nav-1">
 						<li class="u-nav-item"><a
 							class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
@@ -85,10 +84,7 @@
 			</nav>
 		</div>
 	</header>
-	<form id="logoutForm" method="POST" action="/logout">
-        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-        <input type="submit" value="Logout!" />
-    </form>
+
 	<section class="u-clearfix u-image u-section-1" id="carousel_ecec"
 		data-image-width="1980" data-image-height="1320">
 		<div class="u-clearfix u-layout-wrap u-layout-wrap-1">
