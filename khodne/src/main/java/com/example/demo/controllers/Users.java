@@ -202,8 +202,23 @@ public class Users {
 		return "redirect:/";
 		
 	}
-	@RequestMapping("/driver")
-	public String driverPage() {
+	@RequestMapping("/driver/{id}")
+	public String driverPage(@PathVariable("id")Long dId,Model model) {
+		User d = userService.findUserById(dId);
+		model.addAttribute("driverr", d);
+		List<Trip> dTrip = userService.getAllTrips();
+		ArrayList<Trip> tripss =new ArrayList<>();
+
+		for (int i=0; i<dTrip.size();i++) {
+			if(dTrip.get(i).getDriver() == d.getId()) {
+				User riderU = userService.findUserById((Long)dTrip.get(i).getRider()); 
+				model.addAttribute("riderr", riderU);
+				System.out.println(riderU.getPhone());
+				tripss.add(dTrip.get(i));
+			}
+		}
+		model.addAttribute("tripss", tripss); //is a list
+		model.addAttribute("dTrip", dTrip);//not list
 		return "driver.jsp";
 	}
 	
