@@ -1,4 +1,5 @@
 $('.btn-enregistrer').click(function() {
+console.log("im hereeee");
   $('.connexion').addClass('remove-section');
 	$('.enregistrer').removeClass('active-section');
   $('.btn-enregistrer').removeClass('active');
@@ -11,4 +12,3 @@ $('.btn-connexion').click(function() {
   $('.btn-enregistrer').addClass('active');
   $('.btn-connexion').removeClass('active');
 });
-
